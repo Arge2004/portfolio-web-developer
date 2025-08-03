@@ -9,5 +9,5 @@ import react from '@astrojs/react';
 export default defineConfig({
   integrations: [react()],
   site: "https://arge2004.github.io",
-  base: "portfolio-web-developer/", // importante para rutas en GitHub Pages
+  base: "/portfolio-web-developer/", // importante para rutas en GitHub Pages
 });
