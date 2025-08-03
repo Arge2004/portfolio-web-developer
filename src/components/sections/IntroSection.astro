@@ -1,5 +1,9 @@
 ---
 import FadeInSection from "../react_components/FadeInSection.tsx";
+import linkedin from "../../assets/linkedin.svg?url";
+import github from "../../assets/github.svg?url";
+import location from "../../assets/location.svg?url";
+import profilePicture from "../../assets/profile_picture.jpg?url";
 import "../../styles/Section.sass";
 ---
 
@@ -16,7 +20,7 @@ import "../../styles/Section.sass";
           new challenges.
         </p>
         <div class="info__location">
-          <img src="/location.svg" alt="logo location" />
+          <img src={location} alt="logo location" />
           <p>Antioquia, Colombia</p>
         </div>
         <div class="info__availability">
@@ -29,19 +33,19 @@ import "../../styles/Section.sass";
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="/linkedin.svg" alt="LinkedIn" />
+            <img src={linkedin} alt="LinkedIn" />
           </a>
           <a
             href="http://github.com/your-profile"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="/github.svg" alt="GitHub" />
+            <img src={github} alt="GitHub" />
           </a>
         </div>
       </div>
       <div class="intro-section__image">
-        <img src="/profile_picture.jpg" alt="Profile" />
+        <img src={profilePicture} alt="Profile" />
       </div>
     </div>
   </div>

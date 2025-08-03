@@ -1,5 +1,7 @@
 ---
 import FadeInSection from "../react_components/FadeInSection.tsx";
+import linkedin from "../../assets/linkedin.svg?url";
+import github from "../../assets/github.svg?url";
 ---
 
 <FadeInSection client:visible id="contact-section">
@@ -20,14 +22,14 @@ import FadeInSection from "../react_components/FadeInSection.tsx";
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="/linkedin.svg" alt="LinkedIn" />
+          <img src={linkedin} alt="LinkedIn" />
         </a>
         <a
           href="http://github.com/your-profile"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="/github.svg" alt="GitHub" />
+          <img src={github} alt="GitHub" />
         </a>
       </div>
     </div>

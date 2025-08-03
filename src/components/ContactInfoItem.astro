@@ -1,4 +1,5 @@
 ---
+import copy from "../assets/copy.svg?url";
 const { iconUrl, iconAlt, text } = Astro.props;
 ---
 
@@ -7,7 +8,7 @@ const { iconUrl, iconAlt, text } = Astro.props;
 
   <p id="contact-value">{text}</p>
 
-  <img id="copy-button" src="/copy.svg" alt="copy icon" />
+  <img id="copy-button" src={copy} alt="copy icon" />
 </div>
 
 <style lang="sass">
