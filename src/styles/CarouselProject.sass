@@ -1,0 +1,40 @@
+.keen-slider 
+  margin-inline: calc((100% - 92%) / 2 - 16px)
+
+
+.carousel-projects
+  display: flex
+  margin: 0 auto
+  padding-inline: 24px
+  position: relative
+  width: 95%
+  .arrow
+    position: absolute
+    display: flex
+    align-items: center
+    justify-content: center
+    top: 50%
+    padding: 5px
+    transform: translateY(-50%)
+    background: rgba(255, 255, 255, 0.1)
+    border: none
+    width: 45px
+    height: 45px
+    color: white
+    font-size: 1.5rem
+    cursor: pointer
+    z-index: 10
+    backdrop-filter: blur(4px)
+    transition: background 0.3s ease
+
+    &:hover
+      background: rgba(255, 255, 255, 0.2)
+
+  .arrow.left
+    left: -1rem
+
+  .arrow.right
+    right: -1rem
+
+
+

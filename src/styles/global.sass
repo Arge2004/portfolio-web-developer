@@ -1,0 +1,48 @@
+// Global styles
+@use '../styles/_variables.sass' as variables
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  scroll-behavior: smooth
+
+html
+  height: 100%
+
+html, body
+  background: linear-gradient(to right bottom, #0b0b2b, #0d1533, #111b3c, #152345, #192a4e, #122f52, #093455, #003957, #003c52, #003d4b, #003f43, #113f3c)
+  background-size: 400% 400%
+  position: relative
+  animation: changing 4s ease-in-out infinite
+  color: #ece4d3
+  font-family: Arial, sans-serif
+
+body
+  margin: 0 42px
+
+main
+  display: flex
+  flex-direction: column
+  flex: 1
+  overflow-y: hidden
+
+.container
+  display: flex
+  width: 100%
+  max-height: 85vh
+  margin-block-start: 36px
+  gap: 24px
+
+section
+  flex: 1
+  scroll-snap-align: start
+  scroll-margin-block-start: 52px
+
+@keyframes changing
+  0%
+    background-position: 0 50%
+  50%
+    background-position: 100% 50%
+  100%
+    background-position: 0 50%

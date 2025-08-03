@@ -1,11 +1,32 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../components/layouts/Layout.astro";
+import ContactSection from "../components/sections/ContactSection.astro";
+import ContactInfoItem from "../components/ContactInfoItem.astro";
+import IntroSection from "../components/sections/IntroSection.astro";
+import SkillSection from "../components/sections/SkillSection.astro";
+import StudiesSection from "../components/sections/StudiesSection.astro";
+import ProjectSection from "../components/react_components/ProjectSection";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+
 ---
 
 <Layout>
-	<Welcome />
+  <IntroSection />
+  <StudiesSection />
+  <SkillSection />
+  <ProjectSection client:visible/>
+  <ContactSection>
+    <ContactInfoItem
+      iconUrl="/email.svg"
+      iconAlt="Email Icon"
+      text="argemm.dev08@gmail.com"
+    />
+    <ContactInfoItem
+      iconUrl="/phone.svg"
+      iconAlt="Phone Icon"
+      text="+57 3238044948"
+    />
+  </ContactSection >
 </Layout>
+
+

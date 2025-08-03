@@ -1,0 +1,110 @@
+@use "_variables.sass" as variables;
+
+.project-card
+  display: flex
+  flex-direction: column
+  flex:1
+  background: variables.$bg-primary
+  border-radius: 1rem
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
+  height: 500px
+  transition: box-shadow 0.3s ease
+  @media (min-width: 1480px)
+    height: 600px
+  p 
+      font-size: variables.$p-size
+      line-height: 1.5
+      color: variables.$bg-secondary
+
+  &:hover
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15)
+
+  &__image
+    border-radius: 24px 24px 0 0
+    min-width: inherit
+    max-height: 40%
+    object-fit: cover
+    object-position: center top
+
+
+  &__content
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    padding: 16px 20px
+    flex: 1
+    gap: 4px
+
+  &__title
+    font-size: 32px
+    font-weight: 700
+    color: variables.$bg-secondary
+    margin-bottom: 0.5rem
+
+  &__description
+    color: variables.$bg-secondary
+    font-size: 24px
+    margin-bottom: 1rem
+
+  &__tech-stack
+    display: flex
+    flex-wrap: wrap
+    gap: 0.5rem
+    margin-bottom: 1rem
+
+  &__tech
+    background: variables.$bg-primary
+    padding: 8px 12px
+    border-radius: 0.5rem
+    font-size: clamp(14px, 1.2vw, 16px)
+    color: variables.$bg-secondary
+    display: flex
+    align-items: center
+
+
+  &__tech-icon
+    width: 12px
+    height: 12px
+    margin-left: 1rem
+
+  &__buttons
+    display: flex
+    align-items: center
+    gap: 0.75rem
+
+    .btn
+      display: block
+      padding: 10px 14px
+      border-radius: 0.5rem
+      text-decoration: none
+      text-align: center
+      font-weight: 500
+      font-size: clamp(14px, 2vw, 18px)
+      transition: background 0.5s ease
+
+      @media (min-width: 1480px)
+        min-width: 120px
+        min-height: 48px
+        font-size: clamp(16px, 1.5vw, 20px)
+
+      &--primary
+        background-color: variables.$bg-secondary
+        color: variables.$font-primary-color
+        font-weight: 600
+
+        &:hover
+          transition: background 0.5s ease
+          background-color: variables.$bg-primary
+          color: #fff
+
+      &--secondary
+        background-color: variables.$bg-primary
+        color: #fff
+        transition: background 0.2s ease
+
+        &:hover
+          transition: background 0.2s ease
+          background-color: #111827ff
+
+
+            

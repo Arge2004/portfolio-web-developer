@@ -1,0 +1,26 @@
+<aside>
+  <slot />
+  <img src="/logo.webp" alt="Argemm's Logo" />
+</aside>
+
+<style lang="sass">
+  @use '../../styles/_variables.sass'
+  aside
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: clamp(100px, 10vw, 2400px)
+    padding: 20px 0
+    background-color: variables.$bg-primary
+    border-radius: 20px
+
+    right: 1vw
+    z-index: 1000
+    img
+        width: 125px
+        object-position: center
+        object-fit: containt
+
+
+</style>

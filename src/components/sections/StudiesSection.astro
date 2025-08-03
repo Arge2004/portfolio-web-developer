@@ -1,0 +1,101 @@
+---
+import FadeInSection from "../react_components/FadeInSection";
+---
+
+<FadeInSection id="studies-section" client:visible>
+  <div class="section-container">
+    <div class="timeline">
+      <h2>Academic Background</h2>
+      <div class="timeline__item">
+        <span class="timeline__badge">2021</span>
+        <h3>Technical Program in Web Development (Foundations)</h3>
+        <p>
+          <img src="/location.svg" alt="location icon" />
+          Politécnico Jaime Isaza Cadavid — Rionegro, Colombia
+        </p>
+        <p>
+          Completed a short-term technical program covering the fundamentals of
+          web development. Learned the basics of HTML and CSS, and gained an
+          introduction to creating simple, responsive websites.
+        </p>
+      </div>
+
+      <div class="timeline__item">
+        <span class="timeline__badge">Expected graduation: 2027</span>
+        <h3>Bachelor's Degree in Systems Engineering</h3>
+        <p>
+          <img src="/location.svg" alt="location icon" />
+          University of Antioquia — Medellin, Colombia
+        </p>
+        <p>
+          Currently pursuing a bachelor's degree focused on software
+          engineering, computer systems, and information technologies.
+          Coursework includes web development, databases, and backend
+          technologies. Developing skills in building dynamic web applications,
+          managing relational databases, and implementing server-side logic.
+        </p>
+      </div>
+    </div>
+  </div>
+</FadeInSection>
+
+<style lang="sass">
+  @use '../../styles/_variables.sass'
+
+  .timeline
+    width: 100%
+    height: auto
+    display: grid
+    grid-template-columns: 1fr 2fr
+    grid-template-rows: auto
+    align-items: center
+    justify-items: center
+    gap: 40px
+    padding: 40px 20px
+    color: variables.$bg-secondary
+    border-radius: 20px
+    margin: 0 auto
+    position: relative
+
+    h2
+      font-weight: bold
+      background-color: variables.$bg-secondary
+      color: variables.$font-primary-color
+      padding: 20px 20px
+      border-radius: 10px
+      font-size: variables.$h2-size
+      text-align: center
+      grid-row: 1 / 3
+
+    &::after
+      content: ''
+      position: absolute
+      left: 33%
+      width: 4px
+      height: 90%
+      background-color: variables.$bg-secondary
+      border-radius: 2px
+
+    .timeline__item
+      display: flex
+      flex-direction: column
+      gap: 24px
+      padding: 20px
+      border-radius: 12px
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
+      background-color: variables.$bg-primary
+      h3
+        font-size: 24px
+        margin-bottom: 5px
+      p
+        display: flex
+        align-items: center
+        gap: 10px
+        font-size: variables.$p-size
+        line-height: 1.2
+      p:last-of-type
+        font-size: 14px
+        line-height: 1.4
+</style>
+
+
