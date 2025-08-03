@@ -6,6 +6,8 @@ import IntroSection from "../components/sections/IntroSection.astro";
 import SkillSection from "../components/sections/SkillSection.astro";
 import StudiesSection from "../components/sections/StudiesSection.astro";
 import ProjectSection from "../components/react_components/ProjectSection";
+import email from "../assets/email.svg?url";
+import phone from "../assets/phone.svg?url";
 
 
 ---
@@ -17,12 +19,12 @@ import ProjectSection from "../components/react_components/ProjectSection";
   <ProjectSection client:visible/>
   <ContactSection>
     <ContactInfoItem
-      iconUrl="/email.svg"
+      iconUrl={email}
       iconAlt="Email Icon"
       text="argemm.dev08@gmail.com"
     />
     <ContactInfoItem
-      iconUrl="/phone.svg"
+      iconUrl={phone}
       iconAlt="Phone Icon"
       text="+57 3238044948"
     />
