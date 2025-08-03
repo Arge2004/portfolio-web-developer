@@ -8,6 +8,6 @@ import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
   integrations: [react()],
-  output: 'static',
-  base: '/portfolio-web-developer/', // importante para rutas en GitHub Pages
+  site: "https://arge2004.github.io",
+  base: "portfolio-web-developer", // importante para rutas en GitHub Pages
 });
