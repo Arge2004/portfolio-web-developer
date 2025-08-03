@@ -4,9 +4,10 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && touch dist/.nojekyll",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "astro build && gh-pages -d dist"
   },
   "dependencies": {
     "@astrojs/react": "^4.3.0",
@@ -20,6 +21,7 @@
     "tech-stack-icons": "^3.3.2"
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "sass": "^1.89.2"
   }
 }
