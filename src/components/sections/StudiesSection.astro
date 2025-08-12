@@ -104,15 +104,25 @@ import location from "../../assets/location.svg?url";
         margin-bottom: 5px
         @media screen and (max-width: 768px)
           font-size: 16px
-      p
+      p:first-of-type
         display: flex
         align-items: center
         gap: 10px
         font-size: variables.$p-size
-        line-height: 1.2
+        img
+          width: 24px
+          height: 24px
+          align-self: flex-start
+
       p:last-of-type
         font-size: 14px
         line-height: 1.4
+        @media screen and (max-width: 768px) 
+          font-size: 14px
+          line-height: 1.2
+          padding-block: 8px
+          text-align: justify
+
 </style>
 
 
