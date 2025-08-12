@@ -1,0 +1,108 @@
+---
+import { MdDownload } from "react-icons/md";
+---
+
+<button class="cv-btn" id="cvButton">
+    <MdDownload size={20} />
+    <span>Download CV</span>
+    <span class="spinner"></span>
+    <span class="check">✔</span>
+</button>
+
+<script>
+    // Activa el link permanente al PDF de tu Google Docs
+  // Reemplaza el ID con el tuyo
+  const fileUrl =
+    "https://docs.google.com/document/d/1usAmEMsYvWMI5Kk46-YqKd6HN3qPRPaEo5MmmYViNsg/export?format=pdf";
+
+  const btn = document.getElementById("cvButton");
+
+  if (btn) {
+    const spinner = btn.querySelector(".spinner");
+    const check = btn.querySelector(".check");
+    const text = btn.querySelector("span:nth-child(2)");
+
+    btn.addEventListener("click", () => {
+      if (btn.classList.contains("loading")) return;
+      btn.classList.add("loading");
+      if (text) text.textContent = "Downloading...";
+
+      // Crear enlace invisible para descargar el PDF
+      const link = document.createElement("a");
+      link.href = fileUrl;
+      link.download = "My-CV.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      // Animación de "descarga exitosa"
+      setTimeout(() => {
+        btn.classList.remove("loading");
+        btn.classList.add("success");
+        if (text) text.textContent = "Downloaded!";
+
+        setTimeout(() => {
+          btn.classList.remove("success");
+          if (text) text.textContent = "Download CV";
+        }, 2000);
+      }, 1500);
+    });
+  }
+</script>
+
+<style lang="sass">
+    @use '../styles/_variables.sass'
+    .cv-btn
+      display: flex
+      align-items: center
+      gap: 8px
+      background-color: variables.$bg-secondary
+      color: variables.$font-primary-color
+      border: none
+      padding: 10px 16px
+      border-radius: 8px
+      cursor: pointer
+      font-weight: bold
+      font-size: 12px
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1)
+      transition: background-color 0.3s ease, transform 0.2s ease
+      position: relative
+      &:hover:not(.loading):not(.success)
+        background-color: darken(variables.$bg-secondary, 5%)
+        transform: translateY(-2px)
+
+      .spinner
+        position: absolute
+        top: -5px
+        right: -5px
+        width: 16px
+        height: 16px
+        border: 2px solid rgba(255,255,255,0.5)
+        border-top-color: variables.$font-primary-color
+        border-radius: 50%
+        animation: spin 1s linear infinite
+        opacity: 0
+        transition: opacity 0.3s ease
+
+      .check
+        position: absolute
+        top: -5px
+        right: -5px
+        font-size: 16px
+        color: #4caf50
+        opacity: 0
+        transition: opacity 0.3s ease
+
+      &.loading .spinner
+        opacity: 1
+
+      &.success .check
+        opacity: 1
+
+  @keyframes spin
+    0%
+      transform: rotate(0deg)
+    100%
+      transform: rotate(360deg)
+
+</style>

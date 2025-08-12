@@ -57,11 +57,18 @@ import { skillsData } from "../../data/skills.ts";
     text-align: center
     gap: 24px
     margin-bottom: 40px
+    @media screen and (max-width: 768px) 
+      gap: 12px
+      margin-bottom: 20px
+    
     p
       font-size: variables.$p-size
       color: variables.$bg-secondary
       max-width: 70%
       margin: 0 auto
+      @media screen and (max-width: 768px) 
+        max-width: 100%
+      
   .skills-container
     display: flex
     flex-wrap: wrap
@@ -69,12 +76,21 @@ import { skillsData } from "../../data/skills.ts";
     width: 100%
     padding: 20px
     gap: 40px
+    @media screen and (max-width: 768px)
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      gap: 20px
+      padding: 0px
     article
       display: flex
       max-width: 48%
       flex-direction: column
       align-items: center
       gap: 12px
+      @media screen and (max-width: 768px)
+        max-width: 100%
+        justify-content: center
       h3
         font-weight: bold
         background-color: variables.$bg-secondary
@@ -83,6 +99,10 @@ import { skillsData } from "../../data/skills.ts";
         border-radius: 10px
         font-size: variables.$h2-size
         margin-bottom: 20px
+        @media screen and (max-width: 768px) 
+          font-size: 16px
+          margin-bottom: 10px
+        
       .skills-list
         display: flex
         flex-wrap: wrap
@@ -91,22 +111,31 @@ import { skillsData } from "../../data/skills.ts";
           display: flex
           flex-direction: column
           align-items: center
-          gap: 10px
-          width: 175px
+          width: 130px
           transform-origin: center
           will-change: transform
           transition: transform 0.5s ease
           margin-bottom: 20px
+          @media screen and (max-width: 768px)
+            width: 100px
+            height: 50px
           a
-            width: 64px
-            height: 64px
+            width: 52px
+            height: 52px
+            @media screen and (max-width: 768px) 
+              width: 30px
+              height: 30px
+            
           .icon
-            max-width: 64px
+            max-width: 52px
+            
           figcaption
             min-width: 150px
             text-align: center
-            font-size: variables.$p-size
+            font-size: 20px
             margin-top: 10px
+            @media screen and (max-width: 768px) 
+              font-size: 16px
           &:hover
             transform: scale(1.2)
             transition: transform 0.5s ease

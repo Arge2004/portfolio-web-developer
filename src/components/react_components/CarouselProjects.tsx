@@ -13,26 +13,6 @@ export default function ProjectSlider({
         perView: 1,
         spacing: 16,
       },
-      breakpoints: {
-        "(min-width: 768px)": {
-          slides: {
-            perView: 2,
-            spacing: 24,
-          },
-        },
-        "(min-width: 1024px)": {
-          slides: {
-            perView: 2,
-            spacing: 32,
-          },
-        },
-        "(min-width: 1920px)": {
-          slides: {
-            perView: 3,
-            spacing: 40,
-          },
-        },
-      },
     },
     []
   );

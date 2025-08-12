@@ -1,13 +1,17 @@
 .keen-slider 
   margin-inline: calc((100% - 92%) / 2 - 16px)
-
+  @media screen and (max-width: 768px)
+    margin-inline: calc((100% - 90%) / 2 - 12px)
 
 .carousel-projects
   display: flex
   margin: 0 auto
   padding-inline: 24px
   position: relative
-  width: 95%
+  width: 60%
+  @media screen and (max-width: 768px)
+    width: 100%
+    padding-inline: 6px
   .arrow
     position: absolute
     display: flex
@@ -31,10 +35,11 @@
       background: rgba(255, 255, 255, 0.2)
 
   .arrow.left
-    left: -1rem
+    left: -2rem
+    @media screen and (max-width: 768px)
+      left: 0
 
   .arrow.right
-    right: -1rem
-
-
-
+    right: -2rem
+    @media screen and (max-width: 768px)
+      right: 0

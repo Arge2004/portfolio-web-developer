@@ -1,5 +1,6 @@
 import '../../styles/ProjectCard.sass';
 import StackIcon from 'tech-stack-icons';
+import { FaExternalLinkAlt, FaCode } from 'react-icons/fa';
 
 type ProjectCardProps = {
   title: string;
@@ -20,27 +21,51 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   return (
     <article className="project-card keen-slider__slide">
-      <img src={imageUrl} alt={`${title} screenshot`} className="project-card__image" />
+      {/* Imagen con overlay */}
+      <div className="project-card__image-container">
+        <a href={demoUrl} target="_blank" rel="noopener noreferrer">
+          <img src={imageUrl} alt={`${title} screenshot`} className="project-card__image" />
+          <div className="project-card__overlay">
+            <h3>{title}</h3>
+          </div>
+        </a>
+      </div>
+
+      {/* Contenido */}
       <div className="project-card__content">
-        <h3 className="project-card__title">{title}</h3>
         <p className="project-card__description">{description}</p>
+
+        {/* Tech stack */}
         <div className="project-card__tech-stack">
-          {techStack.map((tech, index) => (
-            <span key={tech} className="project-card__tech">
-              {tech}
+          {techStack.map((tech) => (
+            <span key={tech} className="project-card__tech-badge">
               <StackIcon name={tech.toLowerCase()} className="project-card__tech-icon" />
+              {tech}
             </span>
           ))}
         </div>
+
+        {/* Botones */}
         <div className="project-card__buttons">
-          {demoUrl && (
-            <a href={demoUrl} target="_blank" rel="noopener noreferrer" className="btn btn--primary">
-              Demo
+          {codeUrl && (
+            <a
+              href={codeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn--secondary"
+            >
+              <FaCode /> Code
             </a>
           )}
-          {codeUrl && (
-            <a href={codeUrl} target="_blank" rel="noopener noreferrer" className="btn btn--secondary">
-              Code
+
+          {demoUrl && (
+            <a
+              href={demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn--primary"
+            >
+              <FaExternalLinkAlt /> Live Demo
             </a>
           )}
         </div>
@@ -48,4 +73,3 @@ export default function ProjectCard({
     </article>
   );
 }
-

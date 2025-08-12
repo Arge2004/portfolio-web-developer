@@ -1,14 +1,17 @@
 ---
-import copy from "../assets/copy.svg?url";
+import copyIcon from "../assets/copy.svg?url";  // tu SVG del clip
 const { iconUrl, iconAlt, text } = Astro.props;
 ---
 
 <div class="contact-item__container">
   <img src={iconUrl} alt={iconAlt} />
 
-  <p id="contact-value">{text}</p>
+  <p class="contact-value">{text}</p>
 
-  <img id="copy-button" src={copy} alt="copy icon" />
+  <div class="copy-container">
+    <img class="copy-button" src={copyIcon} alt="copy icon" />
+    <span class="tooltip">Copied to clipboard!</span>
+  </div>
 </div>
 
 <style lang="sass">
@@ -19,6 +22,7 @@ const { iconUrl, iconAlt, text } = Astro.props;
     gap: 12px
     padding: 8px 12px
     text-align: center
+
     img
       width: 24px
       height: 24px
@@ -29,18 +33,64 @@ const { iconUrl, iconAlt, text } = Astro.props;
         cursor: pointer
         opacity: 0.8
         transform: scale(1.1)
-        transition: transform 0.3s ease, opacity 0.3s ease
+
     p
       flex-grow: 1
       margin: 0 12px
       font-size: 30px
       font-weight: 600
+      @media screen and (max-width: 768px) 
+        font-size: 20px
+        font-weight: 500
+
+  .copy-container
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    @media screen and (max-width: 768px) 
+      display: none
+    
+
+  .tooltip
+    position: absolute
+    left: 35px
+    transform: translateX(-50%)
+    color: white
+    border-radius: 4px
+    font-size: 14px
+    font-weight: 600
+    opacity: 0
+    transform: translateY(-5px)
+    transition: opacity 0.3s ease, transform 0.3s ease
+    pointer-events: none
+
+  .tooltip.show
+    opacity: 1
+    transform: translateY(0)
 </style>
 
-<script type="module">
-  const btn = document.getElementById("copy-button");
-  btn.addEventListener("click", () => {
-    const data = document.getElementById("contact-value").textContent;
-    navigator.clipboard(data);
+<script>
+  document.querySelectorAll(".copy-container").forEach(container => {
+    const btn = container.querySelector(".copy-button") as HTMLImageElement;
+    const tooltip = container.querySelector(".tooltip");
+    const value = container.parentElement ? container.parentElement.querySelector(".contact-value") : null;
+
+    if (btn && tooltip && value) {
+      btn.addEventListener("click", () => {
+        navigator.clipboard.writeText(value.textContent);
+
+        tooltip.classList.add("show");
+
+        // Guardar el src original y cambiar al clip
+        const originalSrc = btn.src;
+        btn.src = `${new URL("../assets/clip.svg", import.meta.url).href}`;
+
+        setTimeout(() => {
+          btn.src = originalSrc;
+          tooltip.classList.remove("show");
+        }, 2000);
+      });
+    }
   });
 </script>

@@ -1,14 +1,31 @@
+---
+import CvButton from "../CvButton.astro"
+---
+
 <nav>
   <ul>
-    <li><a href="#intro-section">About</a></li>
+    <li><a href="#intro-section" class="active">About</a></li>
     <li><a href="#studies-section">Studies</a></li>
     <li><a href="#skills-section">Skills</a></li>
     <li><a href="#project-section">Projects</a></li>
     <li><a href="#contact-section">Contact</a></li>
   </ul>
   <div class="divider"></div>
-  <button>Download CV</button>
+  <CvButton />
+
+  
 </nav>
+
+<script>
+  document.querySelectorAll("nav ul li a").forEach((link) => {
+    link.addEventListener("click", () => {
+      document
+        .querySelectorAll("nav ul li a")
+        .forEach((a) => a.classList.remove("active"));
+      link.classList.add("active");
+    });
+  });
+</script>
 
 <style lang="sass">
   @use '../../styles/_variables.sass'
@@ -16,14 +33,14 @@
     width: 100%
     display: flex
     flex-direction: column
-    flex:1
+    flex: 1
     align-items: center
     padding: 5px 20px 40px
     gap: 20px
     font-size: variables.$p-size
     ul
       display: flex
-      flex:1
+      flex: 1
       flex-direction: column
       gap: 36px
       li
@@ -42,21 +59,8 @@
             background-color: variables.$bg-secondary
             color: variables.$font-primary-color
             transition: background-color 0.8s ease
-    button
-      background-color: variables.$bg-secondary
-      color: variables.$font-primary-color
-      border: none
-      min-width: fit-content
-      padding: 5px 10px
-      border-radius: 10px
-      cursor: pointer
-      font-size: variables.$p-size
-      transition: background-color 0.8s, transform 0.8s
-      will-change: transform
-      transform-origin: center
-      font-weight: 600
-      &:hover
-        background-color: darken(variables.$bg-secondary, 3%)
-        transform: scale(1.05) translateZ(0)
-        transition: background-color 1s ease, transform 1s
+          &.active
+            background-color: variables.$bg-secondary
+            color: variables.$font-primary-color
+    
 </style>
