@@ -16,7 +16,7 @@ export const projects = [
     "description": "A web application for learning and practicing math problems.",
     "imageUrl": project2,
     "techStack": ["NextJS", "TypeScript", "TailwindCSS", "Vercel"],
-    "demoUrl": "https://math-zone-eosin.vercel.app/",
+    "demoUrl": "https://mathematics-project.vercel.app/",
     "codeUrl": "https://github.com/Arge2004/mathzone"
   },
   {
