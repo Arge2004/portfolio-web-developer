@@ -1,4 +1,6 @@
 import project1 from "../assets/projects/project1.png?url";
+import project2 from "../assets/projects/project2.png?url";
+import project3 from "../assets/projects/project3.png?url";
 
 export const projects = [
   {
@@ -10,19 +12,19 @@ export const projects = [
     "codeUrl": "https://github.com/Arge2004/Github-Profile-Visualizer"
   },
   {
-    "title": "Project One",
-    "description": "This is a description of project one.",
-    "imageUrl": project1,
-    "techStack": ["React", "TypeScript", "CSS3"],
-    "demoUrl": "https://demo.projectone.com",
-    "codeUrl": "https://github.com/user/project-one"
+    "title": "Math Zone",
+    "description": "A web application for learning and practicing math problems.",
+    "imageUrl": project2,
+    "techStack": ["NextJS", "TypeScript", "TailwindCSS", "Vercel"],
+    "demoUrl": "https://math-zone-eosin.vercel.app/",
+    "codeUrl": "https://github.com/Arge2004/mathzone"
   },
   {
-    "title": "Project One",
-    "description": "This is a description of project one.",
-    "imageUrl": project1,
-    "techStack": ["React", "TypeScript", "CSS3"],
-    "demoUrl": "https://demo.projectone.com",
-    "codeUrl": "https://github.com/user/project-one"
+    "title": "Url Shortener",
+    "description": "A web application for shortening URLs. Note: for the first time using it, it may take a while to load the answers.",
+    "imageUrl": project3,
+    "techStack": ["Astro", "JS", "TailwindCSS", "MongoDB", "Spring"],
+    "demoUrl": "https://arge2004.github.io/url-shortener-frontend/",
+    "codeUrl": "https://github.com/Arge2004/url-shortener"
   }
 ]
